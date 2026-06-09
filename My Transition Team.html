@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Transition Team â Probate &amp; Estate Property Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Yellowtail&display=swap" rel="stylesheet" />
+<script src="image-slot.js"></script>
+<style>
+:root{
+  --navy:#11305f;
+  --navy-deep:#0f2a5f;
+  --navy-text:#1d3a5e;
+  --ink:#2c3e4f;
+  --gold:#b1894f;
+  --taupe:#9a8a6e;
+  --cream:#fcf7f1;
+  --cream-card:#f4f1ea;
+  --line:#d9d3c7;
+  --serif:'EB Garamond', Georgia, serif;
+  --sans:'Source Sans 3', system-ui, sans-serif;
+  --script:'Yellowtail', cursive;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  font-size:17px;
+  line-height:1.55;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+h1,h2,h3{font-family:var(--serif);color:var(--navy);font-weight:600;margin:0;line-height:1.08;letter-spacing:-.005em;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--sans);font-weight:700;font-size:16px;
+  padding:15px 26px;border-radius:9px;cursor:pointer;border:1.5px solid transparent;
+  transition:transform .15s ease, background .2s ease, box-shadow .2s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(17,48,95,.18);}
+.btn-primary:hover{background:#0c2347;transform:translateY(-1px);box-shadow:0 6px 18px rgba(17,48,95,.26);}
+.btn-outline{background:#fff;color:var(--navy);border-color:#c4ccd8;}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-1px);}
+.btn svg{width:19px;height:19px;flex:none;}
+
+.eyebrow{
+  font-family:var(--serif);text-transform:uppercase;letter-spacing:.18em;
+  color:var(--taupe);font-weight:600;font-size:15px;
+}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid #eee9e0;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1320px;margin:0 auto;gap:24px;}
+.brand{display:flex;flex-direction:column;line-height:1;}
+.brand .logo{font-family:var(--script);color:var(--navy);font-size:34px;letter-spacing:.5px;}
+.brand .sub{font-family:var(--sans);color:var(--ink);font-size:13px;letter-spacing:.01em;margin-top:5px;}
+.nav-right{display:flex;align-items:center;gap:26px;}
+.nav-links{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-weight:600;font-size:16px;color:var(--navy-text);}
+.nav-links a{position:relative;padding:4px 0;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+.nav-links a:hover::after{width:100%;}
+.nav-phone{font-family:var(--sans);font-weight:700;color:var(--navy);font-size:20px;letter-spacing:.01em;}
+.nav-top{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.menu-toggle svg{width:28px;height:28px;color:var(--navy);}
+
+/* ---------- Hero ---------- */
+.hero{padding:54px 0 30px;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:50px;align-items:center;}
+.hero .divider-orn{display:flex;align-items:center;gap:14px;margin:14px 0 22px;max-width:430px;}
+.hero .divider-orn .ln{height:1px;background:var(--gold);flex:1;opacity:.6;}
+.hero .divider-orn svg{color:var(--gold);width:34px;height:14px;}
+.hero h1{font-size:clamp(44px,5.2vw,62px);font-weight:600;letter-spacing:-.015em;line-height:1.07;}
+.hero p.lead{font-size:19px;color:var(--ink);margin:26px 0 0;max-width:480px;}
+.hero p.good{font-size:19px;color:var(--navy);font-weight:700;margin:18px 0 0;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px;}
+.hero-photo{width:100%;aspect-ratio:1.04/1;}
+.hero-photo image-slot{width:100%;height:100%;}
+.hero-banner{font-family:var(--serif);color:var(--navy);font-size:25px;text-align:center;max-width:870px;margin:40px auto 0;line-height:1.4;}
+
+/* ---------- Understand ---------- */
+.understand{background:var(--cream);margin-top:34px;padding:30px 0 46px;}
+.understand-inner{display:grid;grid-template-columns:0.92fr 1.08fr;gap:26px;background:#fbf8f3;border:1px solid #ece6da;border-radius:18px;padding:22px;box-shadow:0 18px 40px -28px rgba(40,30,10,.3);}
+.understand-photo{border-radius:12px;overflow:hidden;min-height:380px;}
+.understand-photo image-slot{width:100%;height:100%;min-height:380px;}
+.understand-card{background:#fff;border:1px solid #eee7da;border-radius:12px;padding:38px 42px;display:flex;flex-direction:column;justify-content:center;}
+.understand-card h2{font-size:40px;line-height:1.12;}
+.orn-row{display:flex;align-items:center;gap:16px;margin:26px 0;}
+.orn-row .ln{height:1px;background:#cdd5df;flex:1;}
+.orn-row svg{color:#b9bdc4;width:26px;height:11px;}
+.understand-card p{margin:0 0 16px;color:var(--ink);font-size:17px;}
+.understand-card p:last-child{margin-bottom:0;}
+
+/* ---------- Services ---------- */
+.services{padding:64px 0 56px;text-align:center;}
+.services h2{font-size:54px;line-height:1.07;}
+.services .subhead{font-family:var(--serif);color:var(--navy);font-size:30px;font-weight:500;margin-top:14px;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px 40px;margin-top:50px;}
+.svc{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.svc-ico{width:130px;height:120px;display:flex;align-items:center;justify-content:center;
+  background-image:radial-gradient(circle, #e7e2d6 1.1px, transparent 1.1px);background-size:9px 9px;background-position:center;
+  transform:rotate(-1.5deg);}
+.svc-ico svg{width:84px;height:84px;transform:rotate(1.5deg);}
+.svc h3{font-family:var(--sans);font-weight:700;color:var(--navy);font-size:22px;margin:18px 0 8px;}
+.svc p{margin:0;color:var(--navy-text);font-size:16px;line-height:1.4;max-width:240px;}
+
+/* ---------- Experience bar ---------- */
+.experience{padding:14px 0 56px;}
+.exp-box{background:var(--navy);border-radius:6px;padding:46px 40px 50px;text-align:center;box-shadow:0 26px 50px -30px rgba(17,48,95,.6);}
+.exp-box h2{color:#f3ede1;font-size:46px;font-weight:600;}
+.exp-div{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 36px;}
+.exp-div .ln{height:1px;width:120px;background:rgba(210,209,204,.5);}
+.exp-div .dots{display:flex;gap:12px;}
+.exp-div .dots span{width:9px;height:9px;background:#cdc7b6;transform:rotate(45deg);display:block;}
+.exp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.stat{border:1px solid rgba(205,199,182,.45);border-radius:6px;padding:24px 14px;}
+.stat .num{font-family:var(--serif);color:#d8d2c4;font-size:46px;font-weight:600;line-height:1;}
+.stat .lab{color:#cfc9bb;font-family:var(--sans);font-weight:700;font-size:16px;line-height:1.25;margin-top:10px;}
+
+/* ---------- 5-step ---------- */
+.plan{padding:18px 0 60px;}
+.plan-grid{display:grid;grid-template-columns:0.86fr 1.14fr;gap:56px;}
+.plan-left h2{font-size:58px;line-height:1.02;}
+.plan-photo{margin-top:30px;border-radius:12px;overflow:hidden;aspect-ratio:0.82/1;}
+.plan-photo image-slot{width:100%;height:100%;}
+.steps{display:flex;flex-direction:column;gap:30px;padding-top:8px;}
+.step{display:grid;grid-template-columns:74px 1fr;gap:18px;align-items:start;}
+.step .n{font-family:var(--serif);color:var(--navy);font-size:64px;font-weight:600;line-height:.8;text-align:center;}
+.step h3{font-family:var(--sans);font-weight:700;color:var(--navy);font-size:22px;margin:6px 0 6px;}
+.step p{margin:0;color:var(--navy-text);font-size:16.5px;line-height:1.46;}
+
+/* ---------- Wholesalers ---------- */
+.whole{padding:30px 0 50px;}
+.whole-card{position:relative;border:1.5px solid var(--navy);border-radius:30px;padding:50px 56px 50px 0;display:grid;grid-template-columns:0.78fr 1.22fr;gap:20px;align-items:center;overflow:hidden;}
+.whole-photo{align-self:end;}
+.whole-photo image-slot{width:100%;height:360px;}
+.whole-text h2{font-size:48px;line-height:1.06;}
+.whole-text p{color:var(--ink);font-size:17px;margin:20px 0 0;}
+.whole-text p strong{color:var(--navy);}
+.hatch{position:absolute;right:42px;bottom:30px;display:flex;gap:7px;}
+.hatch span{width:2px;height:42px;background:var(--navy);transform:rotate(28deg);opacity:.85;}
+
+/* ---------- Testimonials ---------- */
+.testi{position:relative;padding:60px 0 64px;overflow:hidden;}
+.testi-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.testi-bg .edge{position:absolute;top:0;bottom:0;width:150px;opacity:.5;background-size:cover;background-position:center;}
+.testi-bg .edge.l{left:0;background:linear-gradient(120deg,#efe7d8,#f6efe2);}
+.testi-bg .edge.r{right:0;background:linear-gradient(240deg,#e9e3d6,#f4eee2);}
+.testi .wrap{position:relative;z-index:1;}
+.testi h2{text-align:center;font-size:54px;}
+.testi-list{max-width:760px;margin:34px auto 0;display:flex;flex-direction:column;gap:14px;}
+.tq{padding:22px 0 8px;}
+.tq-top{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:14px;}
+.tq-top .ln{height:1px;background:#cfd5dd;flex:1;max-width:230px;}
+.tq-top .mark{font-family:var(--serif);font-size:84px;line-height:0;color:#e3d9c8;height:42px;display:flex;align-items:center;}
+.tq p{margin:0;color:var(--navy-text);font-size:18.5px;line-height:1.5;}
+.tq .who{display:block;text-align:right;margin-top:10px;color:var(--navy-text);font-size:18.5px;}
+
+/* ---------- Outside StL ---------- */
+.outside{background:var(--cream);padding:46px 0;}
+.outside-card{background:#f6f1e8;border-radius:16px;padding:18px;display:grid;grid-template-columns:0.92fr auto 1.08fr;gap:30px;align-items:center;box-shadow:0 16px 40px -30px rgba(40,30,10,.4);}
+.outside-ill{border-radius:12px;overflow:hidden;}
+.outside-ill image-slot{width:100%;height:260px;}
+.outside-sep{align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
+.outside-sep .v{width:1px;flex:1;background:var(--gold);opacity:.55;}
+.outside-sep svg{color:var(--gold);width:18px;height:18px;}
+.outside-txt{padding:14px 28px 14px 0;}
+.outside-txt h2{font-size:40px;line-height:1.1;}
+.outside-txt h2+.gline{width:120px;height:2px;background:var(--gold);margin:16px 0 18px;}
+.outside-txt p{margin:0 0 14px;color:var(--ink);font-size:16.5px;}
+.outside-txt .btn{margin-top:6px;}
+
+/* ---------- Final CTA ---------- */
+.final{background:var(--cream);padding:30px 0 90px;text-align:center;}
+.final .orn-top{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:26px;}
+.final .orn-top .ln{height:1px;width:120px;background:#c9d0d8;}
+.final .orn-top svg{color:var(--navy);width:30px;height:18px;}
+.final h2{font-size:62px;line-height:1.04;max-width:900px;margin:0 auto;}
+.final p{max-width:780px;margin:24px auto 0;color:var(--ink);font-size:18px;}
+.final p.callline{color:var(--navy);font-weight:700;font-size:19px;margin-top:30px;}
+.final-cta{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:30px;}
+.final-cta .btn{padding:18px 34px;font-size:17px;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+.foot .logo{font-family:var(--script);color:#fff;font-size:30px;}
+.foot .sub{font-size:13px;color:#9fb0c8;margin-top:4px;}
+.foot-links{display:flex;gap:24px;font-weight:600;color:#dde4ef;}
+.foot-links a:hover{color:#fff;}
+.foot .copy{width:100%;border-top:1px solid rgba(255,255,255,.12);margin-top:8px;padding-top:18px;font-size:13.5px;color:#9fb0c8;}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .nav-links,.nav-phone{display:none;}
+  .menu-toggle{display:block;}
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .hero h1{font-size:52px;}
+  .hero-photo{aspect-ratio:1.3/1;max-height:440px;}
+  .understand-inner{grid-template-columns:1fr;}
+  .understand-photo,.understand-photo image-slot{min-height:300px;}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:40px 24px;}
+  .exp-stats{grid-template-columns:1fr 1fr;}
+  .plan-grid{grid-template-columns:1fr;gap:30px;}
+  .plan-left h2{font-size:46px;}
+  .plan-photo{max-width:420px;}
+  .whole-card{grid-template-columns:1fr;padding:36px 30px;}
+  .whole-photo{max-width:300px;margin:0 auto;}
+  .whole-photo image-slot{height:320px;}
+  .outside-card{grid-template-columns:1fr;}
+  .outside-sep{flex-direction:row;height:auto;}
+  .outside-sep .v{height:1px;width:auto;flex:1;}
+  .outside-txt{padding:0 18px 14px;}
+}
+@media(max-width:560px){
+  .wrap{padding:0 20px;}
+  .nav{padding:12px 20px;}
+  .hero h1{font-size:42px;}
+  .hero-banner{font-size:21px;}
+  .services h2,.testi h2{font-size:38px;}
+  .services .subhead{font-size:23px;}
+  .svc-grid{grid-template-columns:1fr;}
+  .exp-box h2{font-size:32px;}
+  .exp-stats{grid-template-columns:1fr 1fr;gap:14px;}
+  .stat .num{font-size:36px;}
+  .understand-card{padding:28px 24px;}
+  .understand-card h2{font-size:31px;}
+  .whole-text h2{font-size:34px;}
+  .final h2{font-size:40px;}
+  .outside-txt h2{font-size:31px;}
+  .hero-cta .btn,.final-cta .btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="logo">My Transition Team</span>
+      <span class="sub">A division of Terreri Team Realty LLC</span>
+    </div>
+    <div class="nav-top">
+      <span class="nav-phone">(314) 488-0494</span>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#services">Resources</a>
+          <a href="#faq">FAQ</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="btn btn-primary" style="padding:12px 20px;font-size:15px;">Schedule a Free 20 Minute Call</a>
+      </div>
+    </div>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="eyebrow">Probate &amp; Estate Property Specialists</span>
+        <div class="divider-orn">
+          <span class="ln"></span>
+          <svg viewBox="0 0 34 14" fill="currentColor"><path d="M17 1c-3 0-5 2-7 4-2 1-4 1-6 2 2 1 4 1 6 2 2 2 4 4 7 4s5-2 7-4c2-1 4-1 6-2-2-1-4-1-6-2-2-2-4-4-7-4zm0 3a3 3 0 110 6 3 3 0 010-6z"/></svg>
+          <span class="ln"></span>
+        </div>
+        <h1>Dealing with a<br />home in an estate?</h1>
+        <p class="lead">Maybe the home is full of belongings. Cash buyers are calling. You're not sure what needs fixing or who to trust. And you can't afford a costly mistake.</p>
+        <p class="good">The good news? We can handle all of it for you.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Schedule a Free 20-Minute Call</a>
+          <a href="tel:3144880494" class="btn btn-outline">Call or text (314) 488-0494</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <image-slot id="hero-team" shape="rounded" radius="16" placeholder="Photo of Malinda &amp; Kate"></image-slot>
+      </div>
+    </div>
+    <p class="hero-banner">We're Malinda and Kate Terreri, two generations of Realtors who have sold over 1200 homes. You get seasoned experience, a fresh perspective, and both of us working for you.</p>
+  </div>
+</section>
+
+<!-- ============ UNDERSTAND ============ -->
+<section class="understand">
+  <div class="wrap">
+    <div class="understand-inner">
+      <div class="understand-photo">
+        <image-slot id="understand" shape="rounded" radius="10" placeholder="Malinda holding family photo"></image-slot>
+      </div>
+      <div class="understand-card">
+        <h2>We understand how overwhelming it can be because our family has been through this too.</h2>
+        <div class="orn-row">
+          <span class="ln"></span>
+          <svg viewBox="0 0 26 11" fill="currentColor"><path d="M13 1c-2 2-4 3-6 3.5 2 .5 4 1.5 6 3.5 2-2 4-3 6-3.5-2-.5-4-1.5-6-3.5z"/></svg>
+          <span class="ln"></span>
+        </div>
+        <p>At 93 years old, my mom (Kate's grandma) was still enjoying the occasional drink of Fireball. She passed away on Mother's Day 2024, surrounded by her kids and grandkids. Classic Mom, making sure we'd never forget the date. :)</p>
+        <p>Sorting through her home, drawer by drawer, reminded both of us what families are facing when they call us.</p>
+        <div class="orn-row">
+          <span class="ln"></span>
+          <svg viewBox="0 0 26 11" fill="currentColor"><path d="M13 1c-2 2-4 3-6 3.5 2 .5 4 1.5 6 3.5 2-2 4-3 6-3.5-2-.5-4-1.5-6-3.5z"/></svg>
+          <span class="ln"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Think of Us as Your<br />Probate Project Managers</h2>
+    <div class="subhead">For Everything Your Attorney Doesn't Handle</div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M10 26l22 8 22-8-10-8H20z"/>
+            <path d="M10 26v18l22 8V34"/><path d="M54 26v18l-22 8"/>
+            <path d="M32 22c0-4-3-7-6-7-3 0-5 2-5 5 0 5 11 9 11 9s11-4 11-9c0-3-2-5-5-5-3 0-6 3-6 7z" stroke="#b1894f"/>
+          </svg>
+        </div>
+        <h3>Cleanouts</h3>
+        <p>We can handle everything so you don't have to lift a finger</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M40 8H22l-14 14 24 24 18-18V8z"/><circle cx="38" cy="18" r="3"/>
+            <path d="M26 40v-8a4 4 0 014-4h2" stroke="#b1894f"/><path d="M24 40h12" stroke="#b1894f"/><path d="M30 28v-6" stroke="#b1894f"/>
+          </svg>
+        </div>
+        <h3>Estate Sales</h3>
+        <p>Connect with trusted estate sale resources</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M8 30h10l4-14h14v14h22"/><path d="M10 30v8a4 4 0 004 4h36a8 8 0 008-8v-4"/>
+            <circle cx="20" cy="48" r="5"/><circle cx="48" cy="48" r="5"/><path d="M25 48h18" stroke="#b1894f"/>
+          </svg>
+        </div>
+        <h3>Lawn Care</h3>
+        <p>Keep the home cared for while decisions are pending</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M34 14l4-4a8 8 0 0111 11l-4 4-7-7z" /><path d="M34 14l-7 7 7 7 7-7" stroke="#b1894f"/>
+            <path d="M27 21L10 38a4 4 0 005 6l16-16"/>
+          </svg>
+        </div>
+        <h3>Contractor Referrals</h3>
+        <p>Get connected with reliable help for repairs or updates</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="20" cy="34" r="6"/><path d="M9 52v-3a8 8 0 018-8h6a8 8 0 018 8v3"/>
+            <circle cx="44" cy="34" r="6"/><path d="M33 52v-3a8 8 0 018-8h6a8 8 0 018 8v3"/>
+            <path d="M28 10h20a4 4 0 014 4v8a4 4 0 01-4 4H40l-5 5v-5h-7a4 4 0 01-4-4v-8a4 4 0 014-4z" stroke="#b1894f"/>
+          </svg>
+        </div>
+        <h3>Heirs &amp; Attorney</h3>
+        <p>We can keep everyone in the loop</p>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#11305f" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M12 30L32 14l20 16"/><path d="M16 28v22h32V28"/><path d="M27 50V38h10v12"/>
+            <path d="M48 36h8v14h-8z" stroke="#b1894f"/><path d="M52 30v6" stroke="#b1894f"/><path d="M50 41h4M50 45h4" stroke="#b1894f"/>
+          </svg>
+        </div>
+        <h3>Home Options</h3>
+        <p>Strategies whether you're selling, renting or keeping the home</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="experience">
+  <div class="wrap">
+    <div class="exp-box">
+      <h2>Experience You Can Lean On</h2>
+      <div class="exp-div">
+        <span class="ln"></span>
+        <span class="dots"><span></span><span></span><span></span><span></span></span>
+        <span class="ln"></span>
+      </div>
+      <div class="exp-stats">
+        <div class="stat"><div class="num">1,200<span style="font-size:.7em">+</span></div><div class="lab">Homes<br />Sold</div></div>
+        <div class="stat"><div class="num">Top 1.5%</div><div class="lab">Agents in the Nation<br />Based on 2025 Volume</div></div>
+        <div class="stat"><div class="num">Top 50</div><div class="lab">Agents in Missouri<br />Based on 2025 Volume</div></div>
+        <div class="stat"><div class="num">Certified</div><div class="lab">Probate<br />Specialist</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5-STEP PLAN ============ -->
+<section class="plan">
+  <div class="wrap">
+    <div class="plan-grid">
+      <div class="plan-left">
+        <h2>Our 5-Step Plan to Get You More for the Home</h2>
+        <div class="plan-photo">
+          <image-slot id="plan-house" shape="rounded" radius="10" placeholder="Home exterior photo"></image-slot>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <div><h3>Begin with a Free 20-Minute Call</h3><p>We start by listening. Every estate is different, and before we recommend anything we need to understand your situation, your timeline, and what matters most to your family.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div><h3>Property Assessment</h3><p>We visit the home, walk through it with you, and give you an honest assessment of its condition, what to fix and what to skip.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div><h3>Property Preparation</h3><p>From cleanouts and donations to lawn care and targeted repairs, we coordinate trusted contractors and vendors to position the home for the highest offers possible.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <div><h3>Strategic Marketing</h3><p>We do comprehensive marketing for homes at every price point, including virtual staging, 360Â° tours, and digital renderings that help buyers see the home's potential. Then we market beyond the MLS with targeted outreach to traditional buyers, cash buyers, and institutional investors.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <div><h3>Negotiation and Close</h3><p>Our marketing and pre-inspection process often results in stronger offers without inspection contingencies. With serious buyers competing, we negotiate from a stronger position to help the estate net more.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHOLESALERS ============ -->
+<section class="whole">
+  <div class="wrap">
+    <div class="whole-card">
+      <div class="whole-photo">
+        <image-slot id="whole" shape="rounded" radius="14" fit="contain" placeholder="Malinda holding mailers"></image-slot>
+      </div>
+      <div class="whole-text">
+        <h2>What Wholesalers<br />Don't Want You to Know</h2>
+        <p>Is your phone or mailbox filling up with offers from buyers promising a quick sale with no agent commissions, and they'll even pay closing costs?</p>
+        <p><strong>What they often don't tell you is that they are trying to lock your home under contract for pennies on the dollar.</strong></p>
+        <p>Then they mark the contract up $10,000â$25,000+ and flip it to another buyer. That's money that should have gone to your family.</p>
+        <p>Your home doesn't have to be HGTV-pretty and you don't have to do expensive renovations to get strong offers with a quick closing. We recently helped a family in St. Louis sell their inherited home for <strong>$62,000 more than a wholesaler offered.</strong></p>
+      </div>
+      <div class="hatch"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testi">
+  <div class="testi-bg"><div class="edge l"></div><div class="edge r"></div></div>
+  <div class="wrap">
+    <h2>What Our Clients Say:</h2>
+    <div class="testi-list">
+      <div class="tq">
+        <div class="tq-top"><span class="ln"></span><span class="mark">&rdquo;</span><span class="ln"></span></div>
+        <p>I would highly recommend Terreri Team Realty. I worked with Malinda selling my late mother's home. She was incredibly knowledgeable, professional, and experienced in probate home sales. If I could give more than 5 stars I would. Malinda is an amazing agent!</p>
+        <span class="who">- Carmen Meszaros</span>
+      </div>
+      <div class="tq">
+        <div class="tq-top"><span class="ln"></span><span class="mark">&rdquo;</span><span class="ln"></span></div>
+        <p>Even when it seemed it wouldn't benefit her professionally, Malinda had my back, was kind and found solutions. I couldn't have done it without her! I would give her 10 stars if I could!</p>
+        <span class="who">- Claire Nakasue</span>
+      </div>
+      <div class="tq">
+        <div class="tq-top"><span class="ln"></span><span class="mark">&rdquo;</span><span class="ln"></span></div>
+        <p>I have been involved in real estate for over 45 years and no agent has ever come close to all that Malinda did for us. Inspectors, contractors, lawyers, management companies, vagrants, and 'I will buy your house as-is' scalpers, were all on my back. Malinda's advice and guidance were priceless.</p>
+        <span class="who">- Caeser Garcia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTSIDE STL ============ -->
+<section class="outside">
+  <div class="wrap">
+    <div class="outside-card">
+      <div class="outside-ill">
+        <image-slot id="outside-house" shape="rounded" radius="10" placeholder="Watercolor home illustration"></image-slot>
+      </div>
+      <div class="outside-sep">
+        <span class="v"></span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.5 3-3 5-6 6 3 1 4.5 3 6 6 1.5-3 3-5 6-6-3-1-4.5-3-6-6z"/></svg>
+        <span class="v"></span>
+      </div>
+      <div class="outside-txt">
+        <h2>Have a probate property outside St. Louis?</h2>
+        <div class="gline"></div>
+        <p>We're based in St. Louis, but we work with personal representatives anywhere in the country.</p>
+        <p>Call us and we'll talk through your situation and connect you with the right specialist in your area.</p>
+        <a href="tel:3144880494" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1z"/></svg>
+          Call or text (314) 488-0494</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <div class="orn-top">
+      <span class="ln"></span>
+      <svg viewBox="0 0 30 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 3l6 6-6 6-6-6z"/><path d="M15 7l2 2-2 2-2-2z" fill="currentColor"/></svg>
+      <span class="ln"></span>
+    </div>
+    <h2>Enough About Us. Let's Talk About Your Situation</h2>
+    <p>We offer a free 20-minute call. Even if the home is still full of belongings, or you're unsure whether to sell, rent, or keep it, this call can help you sort through your options, including some you may not have considered.</p>
+    <p>You'll walk away knowing what to do next, what to avoid, and which trusted resources may help, whether you work with us or not.</p>
+    <p class="callline">Call or text us at (314) 488-0494. We look forward to chatting with you soon.</p>
+    <div class="final-cta">
+      <a href="#contact" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M7 13h2M11 13h2M15 13h2M7 17h2M11 17h2" stroke-width="1.6"/></svg>
+        Schedule a Free 20-Minute Call</a>
+      <a href="tel:3144880494" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1z"/></svg>
+        Call or text (314) 488-0494</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="logo">My Transition Team</div>
+      <div class="sub">A division of Terreri Team Realty LLC</div>
+    </div>
+    <nav class="foot-links">
+      <a href="#services">Resources</a>
+      <a href="#faq">FAQ</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="copy">Â© 2026 Terreri Team Realty LLC Â· Probate &amp; Estate Property Specialists Â· St. Louis, MO Â· (314) 488-0494</div>
+  </div>
+</footer>
+
+<style>
+.nav-links.open{display:flex;position:absolute;top:100%;right:20px;flex-direction:column;background:#fff;padding:18px 24px;border:1px solid #eee9e0;border-radius:12px;box-shadow:0 18px 40px -18px rgba(0,0,0,.25);gap:14px;}
+</style>
+</body>
+</html>
