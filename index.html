@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
-</script>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Transition Team â Probate &amp; Estate Property Specialists</title>
+<title>My Transition Team — Probate &amp; Estate Property Specialists</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Yellowtail&display=swap" rel="stylesheet" />
-<script src="image-slot.js"></script>
 <style>
 :root{
   --navy:#11305f;
@@ -89,15 +85,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .hero p.lead{font-size:19px;color:var(--ink);margin:26px 0 0;max-width:480px;}
 .hero p.good{font-size:19px;color:var(--navy);font-weight:700;margin:18px 0 0;}
 .hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px;}
-.hero-photo{width:100%;aspect-ratio:1.04/1;}
-.hero-photo image-slot{width:100%;height:100%;}
+.hero-photo{width:100%;aspect-ratio:1.04/1;border-radius:16px;overflow:hidden;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .hero-banner{font-family:var(--serif);color:var(--navy);font-size:25px;text-align:center;max-width:870px;margin:40px auto 0;line-height:1.4;}
 
 /* ---------- Understand ---------- */
 .understand{background:var(--cream);margin-top:34px;padding:30px 0 46px;}
 .understand-inner{display:grid;grid-template-columns:0.92fr 1.08fr;gap:26px;background:#fbf8f3;border:1px solid #ece6da;border-radius:18px;padding:22px;box-shadow:0 18px 40px -28px rgba(40,30,10,.3);}
 .understand-photo{border-radius:12px;overflow:hidden;min-height:380px;}
-.understand-photo image-slot{width:100%;height:100%;min-height:380px;}
+.understand-photo img{width:100%;height:100%;min-height:380px;object-fit:cover;object-position:center;}
 .understand-card{background:#fff;border:1px solid #eee7da;border-radius:12px;padding:38px 42px;display:flex;flex-direction:column;justify-content:center;}
 .understand-card h2{font-size:40px;line-height:1.12;}
 .orn-row{display:flex;align-items:center;gap:16px;margin:26px 0;}
@@ -137,7 +133,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .plan-grid{display:grid;grid-template-columns:0.86fr 1.14fr;gap:56px;}
 .plan-left h2{font-size:58px;line-height:1.02;}
 .plan-photo{margin-top:30px;border-radius:12px;overflow:hidden;aspect-ratio:0.82/1;}
-.plan-photo image-slot{width:100%;height:100%;}
+.plan-photo img{width:100%;height:100%;object-fit:cover;object-position:center;}
 .steps{display:flex;flex-direction:column;gap:30px;padding-top:8px;}
 .step{display:grid;grid-template-columns:74px 1fr;gap:18px;align-items:start;}
 .step .n{font-family:var(--serif);color:var(--navy);font-size:64px;font-weight:600;line-height:.8;text-align:center;}
@@ -147,8 +143,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 /* ---------- Wholesalers ---------- */
 .whole{padding:30px 0 50px;}
 .whole-card{position:relative;border:1.5px solid var(--navy);border-radius:30px;padding:50px 56px 50px 0;display:grid;grid-template-columns:0.78fr 1.22fr;gap:20px;align-items:center;overflow:hidden;}
-.whole-photo{align-self:end;}
-.whole-photo image-slot{width:100%;height:360px;}
+.whole-photo{align-self:end;display:flex;justify-content:center;}
+.whole-photo img{width:auto;max-width:100%;height:420px;object-fit:contain;object-position:bottom;}
 .whole-text h2{font-size:48px;line-height:1.06;}
 .whole-text p{color:var(--ink);font-size:17px;margin:20px 0 0;}
 .whole-text p strong{color:var(--navy);}
@@ -174,8 +170,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 /* ---------- Outside StL ---------- */
 .outside{background:var(--cream);padding:46px 0;}
 .outside-card{background:#f6f1e8;border-radius:16px;padding:18px;display:grid;grid-template-columns:0.92fr auto 1.08fr;gap:30px;align-items:center;box-shadow:0 16px 40px -30px rgba(40,30,10,.4);}
-.outside-ill{border-radius:12px;overflow:hidden;}
-.outside-ill image-slot{width:100%;height:260px;}
+.outside-ill{border-radius:12px;overflow:hidden;background:#fbf7ef;}
+.outside-ill img{width:100%;height:260px;object-fit:contain;object-position:center;}
 .outside-sep{align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
 .outside-sep .v{width:1px;flex:1;background:var(--gold);opacity:.55;}
 .outside-sep svg{color:var(--gold);width:18px;height:18px;}
@@ -213,7 +209,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
   .hero h1{font-size:52px;}
   .hero-photo{aspect-ratio:1.3/1;max-height:440px;}
   .understand-inner{grid-template-columns:1fr;}
-  .understand-photo,.understand-photo image-slot{min-height:300px;}
+  .understand-photo img{min-height:300px;}
   .svc-grid{grid-template-columns:1fr 1fr;gap:40px 24px;}
   .exp-stats{grid-template-columns:1fr 1fr;}
   .plan-grid{grid-template-columns:1fr;gap:30px;}
@@ -221,7 +217,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
   .plan-photo{max-width:420px;}
   .whole-card{grid-template-columns:1fr;padding:36px 30px;}
   .whole-photo{max-width:300px;margin:0 auto;}
-  .whole-photo image-slot{height:320px;}
+  .whole-photo img{height:360px;}
   .outside-card{grid-template-columns:1fr;}
   .outside-sep{flex-direction:row;height:auto;}
   .outside-sep .v{height:1px;width:auto;flex:1;}
@@ -294,7 +290,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
         </div>
       </div>
       <div class="hero-photo">
-        <image-slot id="hero-team" shape="rounded" radius="16" placeholder="Photo of Malinda &amp; Kate"></image-slot>
+        <img src="photos/hero-team.jpg" alt="Malinda and Kate Terreri" />
       </div>
     </div>
     <p class="hero-banner">We're Malinda and Kate Terreri, two generations of Realtors who have sold over 1200 homes. You get seasoned experience, a fresh perspective, and both of us working for you.</p>
@@ -306,7 +302,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
   <div class="wrap">
     <div class="understand-inner">
       <div class="understand-photo">
-        <image-slot id="understand" shape="rounded" radius="10" placeholder="Malinda holding family photo"></image-slot>
+        <img src="photos/understand.jpg" alt="Malinda holding a framed family photo" />
       </div>
       <div class="understand-card">
         <h2>We understand how overwhelming it can be because our family has been through this too.</h2>
@@ -426,7 +422,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
       <div class="plan-left">
         <h2>Our 5-Step Plan to Get You More for the Home</h2>
         <div class="plan-photo">
-          <image-slot id="plan-house" shape="rounded" radius="10" placeholder="Home exterior photo"></image-slot>
+          <img src="photos/plan-house.jpg" alt="Home exterior with landscaped entry" />
         </div>
       </div>
       <div class="steps">
@@ -444,7 +440,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
         </div>
         <div class="step">
           <div class="n">4</div>
-          <div><h3>Strategic Marketing</h3><p>We do comprehensive marketing for homes at every price point, including virtual staging, 360Â° tours, and digital renderings that help buyers see the home's potential. Then we market beyond the MLS with targeted outreach to traditional buyers, cash buyers, and institutional investors.</p></div>
+          <div><h3>Strategic Marketing</h3><p>We do comprehensive marketing for homes at every price point, including virtual staging, 360° tours, and digital renderings that help buyers see the home's potential. Then we market beyond the MLS with targeted outreach to traditional buyers, cash buyers, and institutional investors.</p></div>
         </div>
         <div class="step">
           <div class="n">5</div>
@@ -460,13 +456,13 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
   <div class="wrap">
     <div class="whole-card">
       <div class="whole-photo">
-        <image-slot id="whole" shape="rounded" radius="14" fit="contain" placeholder="Malinda holding mailers"></image-slot>
+        <img src="photos/wholesalers.jpg" alt="Malinda holding wholesaler mailers" />
       </div>
       <div class="whole-text">
         <h2>What Wholesalers<br />Don't Want You to Know</h2>
         <p>Is your phone or mailbox filling up with offers from buyers promising a quick sale with no agent commissions, and they'll even pay closing costs?</p>
         <p><strong>What they often don't tell you is that they are trying to lock your home under contract for pennies on the dollar.</strong></p>
-        <p>Then they mark the contract up $10,000â$25,000+ and flip it to another buyer. That's money that should have gone to your family.</p>
+        <p>Then they mark the contract up $10,000–$25,000+ and flip it to another buyer. That's money that should have gone to your family.</p>
         <p>Your home doesn't have to be HGTV-pretty and you don't have to do expensive renovations to get strong offers with a quick closing. We recently helped a family in St. Louis sell their inherited home for <strong>$62,000 more than a wholesaler offered.</strong></p>
       </div>
       <div class="hatch"><span></span><span></span><span></span></div>
@@ -504,7 +500,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
   <div class="wrap">
     <div class="outside-card">
       <div class="outside-ill">
-        <image-slot id="outside-house" shape="rounded" radius="10" placeholder="Watercolor home illustration"></image-slot>
+        <img src="photos/outside-house.jpg" alt="Watercolor illustration of a home" />
       </div>
       <div class="outside-sep">
         <span class="v"></span>
@@ -560,7 +556,7 @@ footer{background:var(--navy);color:#cdd6e4;padding:40px 0;}
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="copy">Â© 2026 Terreri Team Realty LLC Â· Probate &amp; Estate Property Specialists Â· St. Louis, MO Â· (314) 488-0494</div>
+    <div class="copy">© 2026 Terreri Team Realty LLC · Probate &amp; Estate Property Specialists · St. Louis, MO · (314) 488-0494</div>
   </div>
 </footer>
 
